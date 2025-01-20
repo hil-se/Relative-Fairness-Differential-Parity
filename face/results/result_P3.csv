@@ -1,0 +1,21 @@
+Pair,Metric,MAE,sex,race
+P3/P1,Label Train,0.81,(0.00) 0.49,(0.00) 0.09
+P3/P1,Label Test,0.82,(0.00) 0.50,(0.27) 0.04
+P3/P1,Model Train,0.82,(0.00) 0.48,(0.00) 0.10
+P3/P1,Model Test (Unbiased Bridge),0.87,(0.00) 0.44,(0.31) -0.04
+P3/P1,Biased Bridge,0.00,(0.00) 0.43,(0.30) -0.03
+P3/P2,Label Train,0.65,(0.02) 0.06,(0.00) -0.15
+P3/P2,Label Test,0.69,(0.34) 0.02,(0.01) -0.16
+P3/P2,Model Train,0.65,(0.09) 0.04,(0.00) -0.15
+P3/P2,Model Test (Unbiased Bridge),0.60,(0.12) -0.07,(0.00) -0.30
+P3/P2,Biased Bridge,0.00,(0.24) -0.04,(0.00) -0.26
+P3/P3,Label Train,0.00,(0.50) 0.00,(0.50) 0.00
+P3/P3,Label Test,0.00,(0.50) 0.00,(0.50) 0.00
+P3/P3,Model Train,0.19,(0.04) -0.05,(0.44) 0.01
+P3/P3,Model Test (Unbiased Bridge),0.65,(0.06) -0.10,(0.11) -0.09
+P3/P3,Biased Bridge,0.00,(0.13) -0.06,(0.11) -0.08
+P3/Average,Label Train,0.58,(0.00) 0.16,(0.00) -0.14
+P3/Average,Label Test,0.58,(0.01) 0.14,(0.02) -0.15
+P3/Average,Model Train,0.54,(0.00) 0.13,(0.00) -0.15
+P3/Average,Model Test (Unbiased Bridge),0.47,(0.28) 0.04,(0.00) -0.32
+P3/Average,Biased Bridge,0.00,(0.13) 0.06,(0.00) -0.26
