@@ -27,8 +27,4 @@ cd face/src
 ```
 python main.py
 ```
-5. Generate binary classification results in [results/](results/)
-```
-python main_class.py
-```
 
