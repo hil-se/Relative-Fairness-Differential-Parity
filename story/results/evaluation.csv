@@ -1,0 +1,5 @@
+File,Pearson,Spearman,DP
+predictions_zero_shot.csv,0.26,0.37,(0.21) 0.09
+predictions_balanced.csv,0.31,0.42,(0.06) 0.19
+predictions_high.csv,0.27,0.39,(0.12) 0.14
+predictions_low.csv,0.29,0.40,(0.36) 0.04

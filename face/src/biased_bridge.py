@@ -18,7 +18,7 @@ class BiasedBridge:
         mu = mu_test - mu_train
         return mu, var_train/(len(group_train)), var_test/(len(group_test))
 
-    def RBT(self, s_train, s_test):
+    def DPT(self, s_train, s_test):
         if len(np.unique(s_train)) == 2 and len(np.unique(s_test)) == 2:
             group0_train = np.where(np.array(s_train) == 0)[0]
             group0_test = np.where(np.array(s_test) == 0)[0]
@@ -54,7 +54,7 @@ class BiasedBridge:
         p = t.sf(np.abs(erbt), dof)
         return p
 
-    def RBD(self, s_train, s_test):
+    def DPD(self, s_train, s_test):
         if len(np.unique(s_train)) == 2 and len(np.unique(s_test)) == 2:
             group0_train = np.where(np.array(s_train) == 0)[0]
             group0_test = np.where(np.array(s_test) == 0)[0]

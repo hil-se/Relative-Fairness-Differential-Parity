@@ -4,7 +4,6 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression, LinearRegression
 import sklearn.metrics as m
 
-
 class Metrics:
     def __init__(self, y, y_pred):
         # y and y_pred are 1-d arrays of true values and predicted values
@@ -15,7 +14,7 @@ class Metrics:
         return m.mean_squared_error(self.y, self.y_pred)
 
     def mae(self):
-        return np.sum(np.abs(np.array(self.y) - np.array(self.y_pred))) / len(self.y)
+        return np.sum(np.abs(np.array(self.y) - np.array(self.y_pred)))/len(self.y)
         # return sklearn.metrics.mean_absolute_error(self.y, self.y_pred)
 
     def r2(self):
@@ -32,8 +31,8 @@ class Metrics:
         if len(np.unique(s)) == 2:
             error = np.array(self.y_pred) - np.array(self.y)
             bias = {}
-            bias[1] = error[np.where(np.array(s) == 1)[0]]
-            bias[0] = error[np.where(np.array(s) == 0)[0]]
+            bias[1] = error[np.where(np.array(s)==1)[0]]
+            bias[0] = error[np.where(np.array(s)==0)[0]]
             bias_diff = np.mean(bias[1]) - np.mean(bias[0])
         else:
             bias_diff = 0.0
@@ -53,6 +52,7 @@ class Metrics:
             bias_diff = 0.0
         return bias_diff
 
+
     def DPT(self, s):
         # s is an array of numerical values of a sensitive attribute
         if len(np.unique(s)) == 2:
@@ -63,11 +63,11 @@ class Metrics:
             bias_diff = np.mean(bias[1]) - np.mean(bias[0])
             var1 = np.var(bias[1], ddof=1)
             var0 = np.var(bias[0], ddof=1)
-            var = var1 / len(bias[1]) + var0 / len(bias[0])
-            if var > 0:
+            var = var1/len(bias[1])+var0/len(bias[0])
+            if var>0:
                 bias_diff = bias_diff / np.sqrt(var)
                 dof = var ** 2 / ((var1 / len(bias[1])) ** 2 / (len(bias[1]) - 1) + (var0 / len(bias[0])) ** 2 / (
-                        len(bias[0]) - 1))
+                            len(bias[0]) - 1))
             else:
                 bias_diff = 0.0
                 dof = 1
@@ -82,12 +82,12 @@ class Metrics:
                         n += 1
                         bias_diff += diff_pred - diff_true
             bias_diff = bias_diff / n
-            sigma = np.std(self.y_pred - self.y, ddof=1)
+            sigma = np.std(self.y_pred - self.y, ddof = 1)
             if sigma:
                 bias_diff = bias_diff * np.sqrt(len(s)) / sigma
             else:
                 bias_diff = 0.0
-            dof = len(s) - 1
+            dof = len(s)-1
         p = t.sf(np.abs(bias_diff), dof)
         # p = ttest_ind(bias[1], bias[0], equal_var=False, alternative='less').pvalue
         return p

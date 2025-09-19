@@ -36,28 +36,28 @@ class RelativeFairnessTesting():
                 m = Metrics(self.data[target][training], self.data[base][training])
                 result["MAE"] = "%.2f" % m.mae()
                 for A in self.protected:
-                    result[A] = "(%.2f) %.2f" % (m.RBT(self.data[A][training]), m.RBD(self.data[A][training]))
+                    result[A] = "(%.2f) %.2f" % (m.DPT(self.data[A][training]), m.DPD(self.data[A][training]))
                 results.append(result)
                 # GT on test set
                 result = {"Pair": base + "/" + target, "Metric": "Label Test"}
                 m = Metrics(self.data[target][test], self.data[base][test])
                 result["MAE"] = "%.2f" % m.mae()
                 for A in self.protected:
-                    result[A] = "(%.2f) %.2f" % (m.RBT(self.data[A][test]), m.RBD(self.data[A][test]))
+                    result[A] = "(%.2f) %.2f" % (m.DPT(self.data[A][test]), m.DPD(self.data[A][test]))
                 results.append(result)
                 # Model on training set
                 m = Metrics(self.data[target][training], preds[training])
                 result = {"Pair": base + "/" + target, "Metric": "Model Train"}
                 result["MAE"] = "%.2f" % m.mae()
                 for A in self.protected:
-                    result[A] = "(%.2f) %.2f" % (m.RBT(self.data[A][training]), m.RBD(self.data[A][training]))
+                    result[A] = "(%.2f) %.2f" % (m.DPT(self.data[A][training]), m.DPD(self.data[A][training]))
                 results.append(result)
                 # Model on test set
                 m = Metrics(self.data[target][test], preds[test])
                 result = {"Pair": base + "/" + target, "Metric": "Model Test (Unbiased Bridge)"}
                 result["MAE"] = "%.2f" % m.mae()
                 for A in self.protected:
-                    result[A] = "(%.2f) %.2f" % (m.RBT(self.data[A][test]), m.RBD(self.data[A][test]))
+                    result[A] = "(%.2f) %.2f" % (m.DPT(self.data[A][test]), m.DPD(self.data[A][test]))
                 results.append(result)
 
                 # Biased Bridge
@@ -66,7 +66,7 @@ class RelativeFairnessTesting():
                 result["MAE"] = "%.2f" % 0.0
                 for A in self.protected:
                     result[A] = "(%.2f) %.2f" % (
-                        m.RBT(self.data[A][training], self.data[A][test]), m.RBD(self.data[A][training], self.data[A][test]))
+                        m.DPT(self.data[A][training], self.data[A][test]), m.DPD(self.data[A][training], self.data[A][test]))
                 results.append(result)
             df = pd.DataFrame(results)
             df.to_csv("../results/result_" + base + ".csv", index=False)
