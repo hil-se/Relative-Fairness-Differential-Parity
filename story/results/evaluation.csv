@@ -1,5 +1,7 @@
-File,Pearson,Spearman,DP
-predictions_zero_shot.csv,0.26,0.37,(0.21) 0.09
-predictions_balanced.csv,0.31,0.42,(0.06) 0.19
-predictions_high.csv,0.27,0.39,(0.12) 0.14
-predictions_low.csv,0.29,0.40,(0.36) 0.04
+Model,Prompt,Pearson,Spearman,DP
+llama-3.3-70b-versatile-GT,predictions_zero_shot.csv,0.27,0.40,(0.12) 0.14
+llama-3.3-70b-versatile-GT,predictions_balanced.csv,0.32,0.42,(0.09) 0.16
+moonshotai-kimi-k2-instruct-0905-GT,predictions_zero_shot.csv,0.28,0.41,(0.05) 0.19
+moonshotai-kimi-k2-instruct-0905-GT,predictions_balanced.csv,0.34,0.46,(0.29) 0.06
+between,predictions_zero_shot.csv,0.75,0.79,(0.23) -0.09
+between,predictions_balanced.csv,0.75,0.76,(0.05) 0.19

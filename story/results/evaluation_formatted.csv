@@ -1,0 +1,4 @@
+R0,R1,Pearson,Spearman,DP,Pearson,Spearman,DP
+llama-3.3-70b-versatile-GT,ground truth story point,0.27,0.4,(0.12) 0.14,0.32,0.42,(0.09) 0.16
+moonshotai-kimi-k2-instruct-0905-GT,ground truth story point,0.28,0.41,(0.05) 0.19,0.34,0.46,(0.29) 0.06
+llama-3.3-70b-versatile-GT,moonshotai-kimi-k2-instruct-0905-GT,0.75,0.79,(0.23) -0.09,0.75,0.76,(0.05) 0.19
