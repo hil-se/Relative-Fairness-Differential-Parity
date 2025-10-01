@@ -4,7 +4,7 @@
 #### Experiments on a face beauty data with real human decisions
 [./face/](face/)
 
-#### Experiments on eight datasets with injected biases
-[./synthetic/](synthetic/)
+#### Experiments on story point estimation
+[./story/](story/)
 
 
